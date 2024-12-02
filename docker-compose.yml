@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web1:
+    image: ubuntu:20.04
+    command: tail -f /dev/null
+    container_name: web1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /tmp/ansible:/tmp/ansible
+
+  web2:
+    image: ubuntu:20.04
+    command: tail -f /dev/null
+    container_name: web2
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /tmp/ansible:/tmp/ansible

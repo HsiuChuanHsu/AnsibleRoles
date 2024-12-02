@@ -1,0 +1,5 @@
+---
+nginx_worker_processes: 4
+nginx_worker_connections: 1024
+nginx_server_name: localhost
+nginx_root_path: /var/www/html

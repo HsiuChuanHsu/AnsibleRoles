@@ -1,0 +1,18 @@
+user www-data;
+worker_processes {{ nginx_worker_processes | default(2) }};
+pid /run/nginx.pid;
+
+events {
+    worker_connections {{ nginx_worker_connections | default(768) }};
+}
+
+http {
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+    server {
+        listen 80;
+        server_name {{ nginx_server_name }};
+        root {{ nginx_root_path }};
+        index index.html;
+    }
+}
